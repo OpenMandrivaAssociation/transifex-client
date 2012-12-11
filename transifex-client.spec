@@ -1,14 +1,14 @@
 Name:           transifex-client
-Version:        0.4.1
+Version:        0.8
 Release:        1
 Summary:        Command line client for transifex 
 Group:          Networking/WWW
 License:        BSD
 URL:            http://www.transifex.org/
 Source0:        %{name}-%{version}.tar.gz
-BuildRoot:      %{_tmppath}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:  python-devel python-setuptools
 BuildArch:      noarch
+
 %description
 The Transifex Command-line Client is a command line tool that enables you 
 to easily manage your translations within a project without the need of 
@@ -25,14 +25,21 @@ hassle.
 %setup -q
 
 %install 
-rm -rf $RPM_BUILD_ROOT
-python setup.py install --root=$RPM_BUILD_ROOT
+python setup.py install --root=%{buildroot}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root,-)
-%doc README
 %_bindir/tx
 %py_puresitedir/*
+
+
+%changelog
+* Wed May 04 2011 Bogdano Arendartchuk <bogdano@mandriva.com> 0.4.1-1
++ Revision: 667186
+- new version 0.4.1
+
+* Thu Dec 16 2010 Michael Scherer <misc@mandriva.org> 0.3-1mdv2011.0
++ Revision: 622195
+- import transifex-client
+
