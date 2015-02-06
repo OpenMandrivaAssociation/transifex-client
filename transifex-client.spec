@@ -1,6 +1,6 @@
 Name:           transifex-client
 Version:        0.8
-Release:        1
+Release:        2
 Summary:        Command line client for transifex 
 Group:          Networking/WWW
 License:        BSD
