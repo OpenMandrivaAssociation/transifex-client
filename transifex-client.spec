@@ -4,7 +4,7 @@ Release:        2
 Summary:        Command line client for transifex 
 Group:          Networking/WWW
 License:        BSD
-URL:            http://www.transifex.org/
+URL:            https://www.transifex.org/
 Source0:        %{name}-%{version}.tar.gz
 BuildRequires:  python-devel python-setuptools
 BuildArch:      noarch
